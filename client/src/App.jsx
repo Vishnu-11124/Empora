@@ -1,9 +1,17 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './page/Home';
+import Navbar from './components/Navbar';
+import Dashboard from './page/dashboard/Dashboard';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <h1 className="text-3xl font-bold text-emerald-600">Empora EMS is running!</h1>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="admin/dashboard" element={<Dashboard />}/>
+      </Routes>
     </div>
   );
 };
