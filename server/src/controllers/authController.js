@@ -28,6 +28,7 @@ export const loginAdmin = asyncHandler(async (req, res) => {
   }
 
   const token = generateToken(admin._id);
+  console.log(token)
 
   return res.status(200).json(
     new ApiResponse(

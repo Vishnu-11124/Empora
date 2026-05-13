@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './page/Home';
 import Navbar from './components/Navbar';
 import Dashboard from './page/dashboard/Dashboard';
+import AddEmployee from './page/dashboard/AddEmployee';
+
 
 const App = () => {
   return (
@@ -10,7 +12,10 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="admin/dashboard" element={<Dashboard />}/>
+        <Route path="admin/dashboard" element={<Dashboard />}>
+          <Route path="add-employee" element={<AddEmployee />} />
+
+        </Route>
       </Routes>
     </div>
   );

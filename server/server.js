@@ -5,6 +5,8 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import connectDB from "./src/config/db.js";
 import authRoutes from "./src/routes/authRoutes.js";
+import employeeRoutes from "./src/routes/employeeRoutes.js";
+
 
 dotenv.config();
 
@@ -36,6 +38,7 @@ app.use(morgan("dev"));
 ====================== */
 
 app.use("/api/auth", authRoutes);
+app.use("/api/employee", employeeRoutes)
 
 app.get("/", (req, res) => {
   res.status(200).json({
